@@ -25,6 +25,8 @@ namespace CasaDoCodigo.Controllers
 
         public IActionResult Privacy()
         {
+            ViewData["Message"] = "Sobre a empresa";
+
             return View();
         }
 
