@@ -1,3 +1,4 @@
+using CasaDoCodigo.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -33,6 +34,7 @@ namespace CasaDoCodigo
             );
 
             services.AddTransient<IDataService, DataService>();
+            services.AddTransient<IProdutoRepository, ProdutoRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
