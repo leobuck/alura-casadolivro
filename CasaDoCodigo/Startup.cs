@@ -62,7 +62,7 @@ namespace CasaDoCodigo
                     pattern: "{controller=Pedido}/{action=Carrossel}/{id?}");
             });
 
-            serviceProvider.GetService<DataService>().InicializarDB();
+            serviceProvider.GetService<IDataService>().InicializarDB();
         }
     }
 }
