@@ -9,11 +9,6 @@ namespace CasaDoCodigo.Controllers
         private readonly IProdutoRepository produtoRepository;
         private readonly IPedidoRepository pedidoRepository;
 
-        public PedidoController(IProdutoRepository produtoRepository)
-        {
-            this.produtoRepository = produtoRepository;
-        }
-
         public PedidoController(
             IProdutoRepository produtoRepository, 
             IPedidoRepository pedidoRepository)
