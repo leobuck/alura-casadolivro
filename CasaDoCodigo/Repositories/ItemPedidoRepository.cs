@@ -7,5 +7,10 @@ namespace CasaDoCodigo.Repositories
         public ItemPedidoRepository(ApplicationContext context) : base(context)
         {
         }
+
+        public void UpdateQuantidade(ItemPedido itemPedido)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

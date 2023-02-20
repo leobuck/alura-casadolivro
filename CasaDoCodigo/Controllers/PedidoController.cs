@@ -1,7 +1,6 @@
 ﻿using CasaDoCodigo.Models;
 using CasaDoCodigo.Repositories;
 using Microsoft.AspNetCore.Mvc;
-using System.Runtime.Serialization;
 
 namespace CasaDoCodigo.Controllers
 {
@@ -9,13 +8,16 @@ namespace CasaDoCodigo.Controllers
     {
         private readonly IProdutoRepository produtoRepository;
         private readonly IPedidoRepository pedidoRepository;
+        private readonly IItemPedidoRepository itemPedidoRepository;
 
         public PedidoController(
             IProdutoRepository produtoRepository, 
-            IPedidoRepository pedidoRepository)
+            IPedidoRepository pedidoRepository,
+            IItemPedidoRepository itemPedidoRepository)
         {
             this.produtoRepository = produtoRepository;
             this.pedidoRepository = pedidoRepository;
+            this.itemPedidoRepository = itemPedidoRepository;
         }
 
         public IActionResult Cadastro()
@@ -45,21 +47,9 @@ namespace CasaDoCodigo.Controllers
         }
 
         [HttpPost]
-        public void UpdateQuantidade([FromBody] ItemPedidoViewModel itemPedido)
+        public void UpdateQuantidade([FromBody] ItemPedido itemPedido)
         {
-
+            itemPedidoRepository.UpdateQuantidade(itemPedido);
         }
-    }
-
-    public class ItemPedidoViewModel
-    {
-        public ItemPedidoViewModel(int id, int quantidade)
-        {
-            Id = id;
-            Quantidade = quantidade;
-        }
-
-        public int Id { get; set; }
-        public int Quantidade { get; set; }
     }
 }
