@@ -1,6 +1,7 @@
 ﻿using CasaDoCodigo.Models;
 using CasaDoCodigo.Repositories;
 using Microsoft.AspNetCore.Mvc;
+using System.Runtime.Serialization;
 
 namespace CasaDoCodigo.Controllers
 {
@@ -44,9 +45,21 @@ namespace CasaDoCodigo.Controllers
         }
 
         [HttpPost]
-        public void UpdateQuantidade(int itemPedidoId, int quantidade)
+        public void UpdateQuantidade([FromBody] ItemPedidoViewModel itemPedido)
         {
 
         }
+    }
+
+    public class ItemPedidoViewModel
+    {
+        public ItemPedidoViewModel(int id, int quantidade)
+        {
+            Id = id;
+            Quantidade = quantidade;
+        }
+
+        public int Id { get; set; }
+        public int Quantidade { get; set; }
     }
 }
