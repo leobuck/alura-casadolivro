@@ -44,7 +44,7 @@
                         </button>
                     </span>
                     <input type="text" value="@(item.Quantidade)"
-                           class="form-control text-center" />
+                           class="form-control text-center" onblur="carrinho.updateQuantidade(this)" />
                     <span class="input-group-append">
                             <button class="btn btn-outline-secondary" onclick="carrinho.clickIncremento(this)">
                             +
@@ -93,5 +93,5 @@
 
 @section Scripts
 {
-    <script type="text/javascript" src="js/carrinho.js"></script>
+    <script type="text/javascript" src="/js/carrinho.js"></script>
 }
