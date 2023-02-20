@@ -46,7 +46,7 @@
                     <input type="text" value="@(item.Quantidade)"
                            class="form-control text-center" />
                     <span class="input-group-append">
-                        <button class="btn btn-outline-secondary">
+                            <button class="btn btn-outline-secondary" onclick="clickIncremento()">
                             +
                         </button>
                     </span>
@@ -90,3 +90,12 @@
         </div>
     </div>
 </div>
+
+@section Scripts
+{
+    <script type="text/javascript">
+        function clickIncremento() {
+
+        }
+    </script>
+}
