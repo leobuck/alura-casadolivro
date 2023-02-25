@@ -6,5 +6,6 @@ namespace CasaDoCodigo.Repositories
     {
         void AddItem(string codigo);
         Pedido GetPedido();
+        UpdateQuantidadeResponse UpdateQuantidade(ItemPedido itemPedido);
     }
 }

@@ -4,6 +4,6 @@ namespace CasaDoCodigo.Repositories
 {
     public interface IItemPedidoRepository
     {
-        void UpdateQuantidade(ItemPedido itemPedido);
+        ItemPedido GetItemPedido(int itemPedidoId);
     }
 }
