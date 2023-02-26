@@ -61,7 +61,7 @@ namespace CasaDoCodigo.Controllers
                 return View("Cadastro", cadastro);
             }
 
-            Pedido pedido = pedidoRepository.GetPedido();
+            Pedido pedido = pedidoRepository.UpdateCadastro(cadastro);
             return View(pedido);
         }
 
