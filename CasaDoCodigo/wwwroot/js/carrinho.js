@@ -31,9 +31,16 @@
             async: false,
             data: JSON.stringify(data)
         }).done(function (response) {
-            location.reload();
+            let itemPedido = response.itemPedido;
+            let linhaDoItem = $('[item-id=' + itemPedido.id + ']');
+            linhaDoItem.find('input').val(itemPedido.quantidade);
+            linhaDoItem.find('[subtotal]').html((itemPedido.subtotal).duasCasas());
         });
     }
 }
 
 var carrinho = new Carrinho();
+
+Number.prototype.duasCasas = function () {
+    return this.toFixed(2).replace('.', ',');
+}
